@@ -1,34 +1,35 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-#include <stddef.h>
-
-/* more headers goes there */
 
 /**
- * main - main fuction
+ * main - always void
  *
- * Return: value of n if positive or zero or negative or return 0
+ * Return: value of a random number displays the last digit and tells if the
+ * last digit is greate than five or less than five or equals to 0
  */
 
 int main(void)
 {
-                int n;
+	int n, l;
 
-                srand(time(0));
-                n = rand() - RAND_MAX / 2;
-                /* your code goes there */
-                if (n > 5)
-                {
-                        printf("%d and is greater than 5\n", n);
-                }
-                else if (n == 0)
-                {
-                        printf("%d and is 0\n", n);
-                }
-                else
-                {
-                        printf("%d and is less than 6 and not 0\n", n);
-                }
-                return (0);
+	srand(time(0));
+	n = rand() - RAND_MAX / 2;
+	/* your code goes there */
+	l = n % 10;
+
+	if (l > 5)
+	{
+		printf("Last digit of %d is %d and is greater than 5\n", n, l);
+	}
+	else if (l == 0)
+	{
+		printf("Last digit of %d is %d and is 0\n", n, l);
+	}
+	else
+	{
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, l);
+	}
+
+	return (0);
 }
